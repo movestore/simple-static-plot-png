@@ -26,5 +26,6 @@
         "name": "ggplot2"
       }
     ]
-  }
+  },
+  "createsArtifacts": true
 }
