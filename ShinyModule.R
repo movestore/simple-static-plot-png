@@ -1,7 +1,8 @@
 library('move')
 library('shiny')
 library('maps')
-library(ggplot2)
+library('foreach')
+library('ggplot2')
 
 shinyModuleUserInterface <- function(id, label,num=2) {
   ns <- NS(id)
@@ -27,8 +28,15 @@ shinyModule <- function(input, output, session, data,num=2) {
   current <- reactiveVal(data)
   
   #if we only want to save the png at fist start, this is what we could do
-  plot <- qplot(data[,1], geom = "histogram") 
-  ggsave(plot, file = "graph1.png")
+  data.split <- move::split(data)
+  hist.tab <- foreach(datai = data.split, .combine=rbind) %do% {
+    data.frame("speed"=speed(datai),"id"=namesIndiv(datai))
+  }
+  
+  speed.plot <- ggplot(hist.tab, aes(x = speed, fill = id)) +
+    geom_histogram(position = "identity", alpha = 0.2, bins = 100)
+  ggsave(speed.plot, file = "speedhist.png")
+  ggsave(speed.plot, file = "speedhist.pdf")
   
   lonObj <- reactive({
     coordinates(dataObj())[,1]

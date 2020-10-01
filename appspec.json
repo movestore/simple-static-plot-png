@@ -18,6 +18,12 @@
       },
 	        {
         "name": "move"
+      },
+	        {
+        "name": "foreach"
+      },
+	        {
+        "name": "ggplot2"
       }
     ]
   }
