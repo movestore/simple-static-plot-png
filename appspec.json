@@ -27,5 +27,33 @@
       }
     ]
   },
-  "createsArtifacts": true
+  "createsArtifacts": true,
+  "keywords": {
+	"plot",
+	"map",
+	"coastlines",
+	"static", 
+	"png", 
+	"artifact"
+	},
+   "funding": "Knobloch Society, grant 2345",
+   "contributor": [
+   {
+	"firstname": "Andrea",
+	"lastname": "Kölzsch",
+	"email": "akoelzsch@ab.mpg.de",
+	"role": "author",
+	"orcid": "0000-0003-0193-1563",
+	"affiliation": "Max-Planck-Institute of Animal Behavior"
+	},
+	{
+	"firstname": "Richard",
+	"lastname": "Schuster",
+	"email": "richard.schuster@glel.carleton.ca",
+	"role": "co-author",
+	"orcid": "0000-0003-3191-7869",
+	"affiliation": "University of Carleton"
+	}	
+   ]
+   
 }
